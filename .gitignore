@@ -1,0 +1,19 @@
+#Dont want to show
+.HA_VERSION
+.google.token
+.uuid
+OZW_Log.txt
+deps/
+home-assistant.log
+html5_push_registrations.conf
+known_devices.yaml
+pyozw.sqlite
+tts/
+www/
+zwave_device_config.yaml
+zwcfg_0xc507a625.xml
+zwscene.xml
+
+#Passwords
+secrets.yaml
+includes/python_code/

@@ -1,0 +1,26 @@
+###########################################
+#    Pi Status
+###########################################
+
+- platform: command_line
+  name: pi_uptime
+  command: "sed -n 's/uptime: //p' /home/homeassistant/pi_status.log"
+      
+- platform: command_line
+  name: pi_disk_free
+  command: "sed -n 's/disk_free: //p' /home/homeassistant/pi_status.log"
+  unit_of_measurement: "GB"
+
+- platform: command_line
+  name: pi_cpu_temp
+  command: "sed -n 's/cpu_temp: //p' /home/homeassistant/pi_status.log"
+  unit_of_measurement: "°C"
+
+- platform: command_line
+  name: pi_memusage
+  command: "sed -n 's/mem: //p' /home/homeassistant/pi_status.log"
+  unit_of_measurement: "%"
+
+- platform: command_line
+  name: pi_cpuload
+  command: "sed -n 's/cpu: //p' /home/homeassistant/pi_status.log"

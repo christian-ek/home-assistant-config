@@ -1,0 +1,117 @@
+device_trackers:
+  name: Enheter
+  entities: 
+    - sensor.home_assistant
+    - sensor.ivt_pump
+    - sensor.skypc
+    - sensor.sonos_living_room_play52
+    - sensor.uvcg3huvudentren
+    - sensor.chromecast_vardagsrum
+    - sensor.sonos_living_room_play51
+    - sensor.doorbell
+    - sensor.sonos_kitchen_play1
+    - sensor.verisure
+    - sensor.odin
+    - sensor.skykey
+    - sensor.uvcg3baksidan
+    - sensor.sarahs_air
+    - sensor.mormors_honor_8
+    - sensor.sarahs_iphone
+    - sensor.christians_samsung
+    - sensor.chromecast_gabbys_rum
+    - sensor.jeanettes_iphone
+
+weatherbasics:
+  name: Vädret
+  entities:
+    - sensor.dark_sky_humidity
+    - sensor.dark_sky_apparent_temperature
+    - sensor.dark_sky_cloud_coverage
+    - sensor.dark_sky_hourly_summary
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_wind_speed
+    - sensor.dark_sky_precip_intensity
+    - sensor.dark_sky_pressure
+    - sensor.dark_sky_wind_bearing
+
+cameras:
+  name: Kameror
+  entities:
+    - camera.huvudentren
+    - camera.baksidan
+
+### FLOWER MONITOR CONFIGURATION ###
+flower_1:
+  name: Elefantöra
+  entities:
+    - sensor.flower_1_light_intensity
+    - sensor.flower_1_moisture
+    - sensor.flower_1_conductivity
+    - sensor.flower_1_temperature
+    - sensor.flower_1_battery
+
+server_status:
+  name: Odin
+  entities:
+    - sensor.server_cpuload
+    - sensor.server_disk_free
+    - sensor.server_memusage
+    - sensor.server_uptime
+    - sensor.server_hdd_temp
+    - sensor.server_cpu_temp
+
+home_assistant_status:
+  name: Raspberry Pi
+  entities:
+    - sensor.pi_cpuload
+    - sensor.pi_disk_free
+    - sensor.pi_memusage
+    - sensor.pi_uptime
+    - sensor.pi_hdd_temp
+    - sensor.pi_cpu_temp
+
+speedtest:
+  name: Speedtest
+  entities:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+
+unifi_router_status:
+  name: Unifi Router
+  entities:
+    - sensor.unifi_router_cpuload
+    - sensor.unifi_router_memusage
+    - sensor.unifi_router_uptime
+    - sensor.unifi_router_temp
+
+unifi_switch_status:
+  name: Unifi Switch
+  entities:
+    - sensor.unifi_switch_cpuload
+    - sensor.unifi_switch_memusage
+    - sensor.unifi_switch_uptime
+    - sensor.unifi_switch_temp
+
+backyard_lights:
+  name: Baksidan
+  entities:
+    - switch.hallway_lighting_switch_4_0_2
+    - switch.decklight_switch_2_0_2
+    - switch.decklight_switch_2_0_3
+
+frontyard_lights:
+  name: Framsidan
+  entities:
+    - switch.main_entrance_lighting_switch_3_0_3
+
+hallway_lights:
+  name: Hallen
+  entities:
+    - switch.main_entrance_lighting_switch_3_0_2
+    - switch.hallway_lighting_switch_4_0
+
+mysonos:
+  name: Min Sonos
+  entities:
+  - input_select.sonos_favorites

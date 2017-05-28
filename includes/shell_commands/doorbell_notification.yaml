@@ -1,0 +1,1 @@
+doorbell_notification: 'perl /home/homeassistant/.homeassistant/includes/perl_code/send_doorbell_image_notification.pl'

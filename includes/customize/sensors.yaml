@@ -1,0 +1,150 @@
+###########################################
+#    Customized Sensors
+###########################################
+
+sun.sun:
+  friendly_name: Sun
+alarm_control_panel.alarm_1:
+  friendly_name: Verisure
+  entity_picture: /local/verisure.png
+sensor.hall_temperature:
+  friendly_name: Hallway Temperature
+sensor.yr_symbol:
+  friendly_name: Weather
+
+
+sensor.unifi_switch_cpuload:
+  friendly_name: CPU Load
+  icon: mdi:memory
+sensor.unifi_switch_memusage:
+  friendly_name: RAM Usage
+  icon: mdi:memory
+sensor.unifi_switch_temp:
+  friendly_name: CPU Temperature
+sensor.unifi_switch_uptime:
+  friendly_name: Uptime
+  icon: mdi:clock
+
+sensor.unifi_router_cpuload:
+  friendly_name: CPU Load
+  icon: mdi:memory
+sensor.unifi_router_memusage:
+  friendly_name: RAM Usage
+  icon: mdi:memory
+sensor.unifi_router_temp:
+  friendly_name: CPU Temperature
+sensor.unifi_router_uptime:
+  friendly_name: Uptime
+  icon: mdi:clock
+
+sensor.pi_cpuload:
+  friendly_name: CPU Load
+  icon: mdi:memory
+sensor.pi_disk_free:
+  friendly_name: Disk Free /root
+  icon: mdi:harddisk
+sensor.pi_memusage:
+  friendly_name: RAM Usage
+  icon: mdi:memory
+sensor.pi_uptime:
+  friendly_name: Uptime
+  icon: mdi:clock
+sensor.pi_cpu_temp:
+  friendly_name: CPU Temperature
+
+sensor.server_cpuload:
+  friendly_name: CPU Load
+  icon: mdi:memory
+sensor.server_disk_free:
+  friendly_name: Disk Free /root
+  icon: mdi:harddisk
+sensor.server_memusage:
+  friendly_name: RAM Usage
+  icon: mdi:memory
+sensor.server_uptime:
+  friendly_name: Uptime
+  icon: mdi:clock
+sensor.server_cpu_temp:
+  friendly_name: CPU Temperature
+sensor.server_hdd_temp:
+  friendly_name: HDD Temperature
+
+sensor.speedtest_download:
+  icon: mdi:download
+sensor.speedtest_upload:
+  icon: mdi:upload
+sensor.speedtest_ping:
+  icon: mdi:gauge
+
+sensor.flower_1_battery:
+  friendly_name: Elefantöra Battery
+  icon: mdi:battery
+sensor.flower_1_conductivity:
+  friendly_name: Elefantöra Fertility
+  icon: mdi:flash
+sensor.flower_1_light_intensity:
+  friendly_name: Elefantöra Light
+  icon: mdi:white-balance-sunny
+sensor.flower_1_moisture:
+  friendly_name: Elefantöra Moisture
+  icon: mdi:water-percent
+sensor.flower_1_temperature:
+  friendly_name: Elefantöra Temperature
+
+sensor.home_assistant:
+  friendly_name: Raspberry Pi
+  icon: mdi:raspberrypi
+sensor.ivt_pump:
+  friendly_name: IVT Värmepumpen
+  icon: mdi:radiator
+sensor.skypc:
+  friendly_name: Thor
+  icon: mdi:desktop-tower
+sensor.sonos_living_room_play52:
+  friendly_name: "Sonos Vardagsrum Play:5.2"
+  icon: mdi:music-box-outline
+sensor.uvcg3huvudentren:
+  friendly_name: Unifi G3 Huvudentrén
+  icon: mdi:camera
+sensor.chromecast_vardagsrum:
+  friendly_name: Chromecast Vardagsrum
+  icon: mdi:theater
+sensor.sonos_living_room_play51:
+  friendly_name: "Sonos Vardagsrum Play:5.1"
+  icon: mdi:music-box-outline
+sensor.doorbell:
+  friendly_name: Dörrklockan
+  icon: mdi:bell-ring-outline
+sensor.sonos_kitchen_play1:
+  friendly_name: "Sonos Köket Play:1"
+  icon: mdi:music-box-outline
+sensor.verisure:
+  friendly_name: Verisure
+  icon: mdi:security-home
+sensor.odin:
+  friendly_name: Odin
+  icon: mdi:server-network
+sensor.skykey:
+  friendly_name: SkyKey
+  icon: mdi:music-box-outline
+sensor.uvcg3baksidan:
+  friendly_name: Unifi G3 Baksidan
+  icon: mdi:camera
+sensor.sarahs_air:
+  friendly_name: Sarahs Macbook Air
+  icon: mdi:laptop-mac
+sensor.mormors_honor_8:
+  friendly_name: Mormors Honor 8
+  icon: mdi:cellphone
+sensor.sarahs_iphone:
+  friendly_name: Sarahs iPhone
+  icon: mdi:cellphone-iphone
+sensor.christians_samsung:
+  friendly_name: Christians Samsung
+  icon: mdi:cellphone
+sensor.chromecast_gabbys_rum:
+  friendly_name: Chromecast Gabbys rum
+  icon: mdi:theater
+sensor.jeanettes_iphone:
+  friendly_name: Jeanettes iPhone
+  icon: mdi:cellphone-iphone

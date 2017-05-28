@@ -1,0 +1,15 @@
+#################################################################
+## Turn off lights when alarm is armed
+#################################################################
+- alias: Turn off light when alarm is armed
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.alarm_1
+      to: 'armed_away'
+    - platform: state
+      entity_id: alarm_control_panel.alarm_1
+      to: 'armed_home'
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.hallway_lights

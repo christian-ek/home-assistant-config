@@ -1,0 +1,44 @@
+security_view:
+  view: yes
+  name: Säkerhet
+  icon: mdi:security-home
+  entities:
+      - alarm_control_panel.alarm_1
+      - group.cameras
+
+infrastructure_view:
+  view: yes
+  name: Infrastruktur
+  icon: mdi:server-network
+  entities:
+    - group.home_assistant_status
+    - group.server_status
+    - group.unifi_router_status
+    - group.unifi_switch_status
+    - group.speedtest
+    - group.device_trackers
+
+lighting_view:
+  view: yes
+  name: Belysning
+  icon: mdi:lightbulb
+  entities:
+    - group.hallway_lights
+    - group.frontyard_lights
+    - group.backyard_lights
+
+flowers:
+  view: yes
+  name: Blommor
+  icon: mdi:flower
+  entities:
+    - group.flower_1
+
+music_view:
+  view: yes
+  name: Musik
+  icon: mdi:music-circle
+  entities:
+    - group.mysonos
+    - media_player.kitchen
+    - media_player.living_room

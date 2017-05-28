@@ -1,0 +1,17 @@
+###########################################
+#    Hidden Sensors
+###########################################
+
+sensor.since_last_boot:
+  hidden: true
+sensor.server_status_uptime:
+  hidden: true
+
+###########################################
+#    Hidden Switches
+###########################################
+
+switch.decklight_switch_2_0:
+  hidden: true
+switch.main_entrance_lighting_switch_3_0:
+  hidden: true

@@ -1,0 +1,19 @@
+sonos_control_next:
+  alias: Sonos Control Next
+  sequence:
+    service_template: >
+      {% if is_state('media_player.living_room', 'playing') %}
+        shell_command.sonos_control_living_room_next
+      {% elif is_state('media_player.kitchen', 'playing')  %}
+        shell_command.sonos_control_kitchen_next
+      {% endif %}
+
+sonos_control_previous:
+  alias: Sonos Control Previous
+  sequence:
+    service_template: >
+      {% if is_state('media_player.living_room', 'playing') %}
+        shell_command.sonos_control_living_room_previous
+      {% elif is_state('media_player.kitchen', 'playing')  %}
+        shell_command.sonos_control_kitchen_previous
+      {% endif %}

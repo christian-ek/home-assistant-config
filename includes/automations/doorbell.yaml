@@ -1,0 +1,17 @@
+#################################################################
+## Doorbell automation
+#################################################################
+
+- alias: Doorbell ringing
+  trigger:
+    platform: mqtt
+    topic: home/outdoors/doorbell
+    payload: 'on'
+  action:
+    - service_template: >
+        {% if now().strftime('%H')|int <19%}
+          shell_command.sonos_play_doorbell
+        {% else %}
+          shell_command.sonos_play_doorbell_night
+        {% endif %}
+    - service: shell_command.doorbell_notification

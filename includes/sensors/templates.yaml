@@ -1,0 +1,72 @@
+- platform: template
+  sensors:
+    home_assistant:
+      value_template: "{% if is_state('device_tracker.home_assistant', 'home') %}Online{% else %}Offline{% endif %}"
+    ivt_pump:
+      value_template: "{% if is_state('device_tracker.ivt_pump', 'home') %}Online{% else %}Offline{% endif %}"
+    skypc:
+      value_template: "{% if is_state('device_tracker.skypc', 'home') %}Online{% else %}Offline{% endif %}"
+    sonos_living_room_play52:
+      value_template: "{% if is_state('device_tracker.sonos_living_room_play52', 'home') %}Online{% else %}Offline{% endif %}"
+    uvcg3huvudentren:
+      value_template: "{% if is_state('device_tracker.uvcg3huvudentren', 'home') %}Online{% else %}Offline{% endif %}"
+    chromecast_vardagsrum:
+      value_template: "{% if is_state('device_tracker.chromecast_vardagsrum', 'home') %}Online{% else %}Offline{% endif %}"
+    sonos_living_room_play51:
+      value_template: "{% if is_state('device_tracker.sonos_living_room_play51', 'home') %}Online{% else %}Offline{% endif %}"
+    doorbell:
+      value_template: "{% if is_state('device_tracker.doorbell', 'home') %}Online{% else %}Offline{% endif %}"
+    sonos_kitchen_play1:
+      value_template: "{% if is_state('device_tracker.sonos_kitchen_play1', 'home') %}Online{% else %}Offline{% endif %}"
+    odin:
+      value_template: "{% if is_state('device_tracker.odin', 'home') %}Online{% else %}Offline{% endif %}"
+    skykey:
+      value_template: "{% if is_state('device_tracker.skykey', 'home') %}Online{% else %}Offline{% endif %}"
+    uvcg3baksidan:
+      value_template: "{% if is_state('device_tracker.uvcg3baksidan', 'home') %}Online{% else %}Offline{% endif %}"
+    sarahs_air:
+      value_template: "{% if is_state('device_tracker.sarahs_air', 'home') %}Online{% else %}Offline{% endif %}"
+    mormors_honor_8:
+      value_template: "{% if is_state('device_tracker.mormors_honor_8', 'home') %}Online{% else %}Offline{% endif %}"
+    sarahs_iphone:
+      value_template: "{% if is_state('device_tracker.sarahs_iphone', 'home') %}Online{% else %}Offline{% endif %}"
+    christians_samsung:
+      value_template: "{% if is_state('device_tracker.christians_samsung', 'home') %}Online{% else %}Offline{% endif %}"
+    chromecast_gabbys_rum:
+      value_template: "{% if is_state('device_tracker.chromecast_gabbys_rum', 'home') %}Online{% else %}Offline{% endif %}"
+    jeanettes_iphone:
+      value_template: "{% if is_state('device_tracker.jeanettes_iphone', 'home') %}Online{% else %}Offline{% endif %}"
+    
+    verisure_status:
+      friendly_name: 'Verisure'
+      value_template: >-
+          {%- if is_state("alarm_control_panel.alarm_1", "armed_home") %}
+              Larmat (Skalläge)
+          {% elif is_state("alarm_control_panel.alarm_1", "armed_away") %}
+              Larmat (Bortaläge)
+          {% else %}
+              Avlarmat
+          {%- endif %}
+      
+    sonos_playing:
+        friendly_name: 'Sonos playing'
+        value_template: >-
+            {%- if is_state("media_player.living_room", "playing") %}
+                {{states.media_player.living_room.attributes.media_title}}<br />{{states.media_player.living_room.attributes.media_artist}}
+            {% elif is_state("media_player.kitchen", "playing") %}
+                {{states.media_player.kitchen.attributes.media_title}}<br />{{states.media_player.kitchen.attributes.media_artist}}
+            {% else %}
+                Not playing
+            {%- endif %}
+    
+    sonos_playing_next:
+        friendly_name: 'Sonos playing next'
+        value_template: >-
+            {%- if is_state("media_player.living_room", "playing") and states.sensor.sonos_living_room_next_song != "<br />"%}
+                {{states.sensor.sonos_living_room_next_song.state}}
+            {% elif is_state("media_player.kitchen", "playing") and states.sensor.sonos_kitchen_next_song != "<br />"%}
+                {{states.sensor.sonos_kitchen_next_song.state}}
+            {% else %}
+                Not playing
+            {%- endif %}
+    

@@ -1,0 +1,12 @@
+living_room:
+  name: Living Room
+  initial: 0.3
+  min: 0
+  max: 1
+  step: 0.1
+kitchen:
+  name: Kitchen
+  initial: 0.3
+  min: 0
+  max: 1
+  step: 0.1

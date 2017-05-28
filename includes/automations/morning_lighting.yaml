@@ -1,0 +1,41 @@
+#################################################################
+## Turn on lights before sunrise
+#################################################################
+
+- alias: Morning lights on
+  trigger:
+    platform: time
+    after: '5:00:00'
+  action:
+    - condition: sun
+      before: sunrise
+    - service: homeassistant.turn_on
+      entity_id:
+        - group.frontyard_lights
+        - group.backyard_lights
+
+#################################################################
+## Turn off lights at sunrise
+#################################################################
+
+- alias: Morning lights off
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    - service: homeassistant.turn_off
+      entity_id:
+        - group.frontyard_lights
+        - group.backyard_lights
+    - service: notify.pushbullet
+      data:
+        title: "Home Assistant"
+        message: "God morgon, stänger av utomhusbelysningen."
+        target: !secret pushbullet_channel
+    - condition: state
+      entity_id: alarm_control_panel.alarm_1
+      state: disarmed
+    - service: shell_command.sonos_say
+      data_template:
+        say: '{{"Släcker utomhusbelysningen." | urlencode}}'
+        volume: '50'

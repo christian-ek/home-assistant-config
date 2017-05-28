@@ -1,0 +1,21 @@
+#################################################################
+## HASS Related
+#################################################################
+
+- alias: Heal Z-Wave Network
+  trigger:
+    platform: time
+    after: '2:31:00'
+  action:
+    service: zwave.heal_network
+
+- alias: Update Available Notification
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    service: notify.pushbullet
+    data_template:
+      title: "Home Assistant"
+      message: "HomeAssistant {{ states('updater.updater') }} is now available"
+      target: !secret pushbullet_channel

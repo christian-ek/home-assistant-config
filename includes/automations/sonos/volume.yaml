@@ -1,0 +1,41 @@
+- alias: living_room - Adjust Volume
+  trigger:
+    platform: state
+    entity_id: input_slider.living_room
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.living_room
+        volume_level: '{{ trigger.to_state.state }}'
+
+- alias: kitchen - Adjust Volume
+  trigger:
+    platform: state
+    entity_id: input_slider.kitchen
+  action:
+    - service: media_player.volume_set
+      data_template:
+        entity_id: media_player.kitchen
+        volume_level: '{{ trigger.to_state.state }}'
+
+# second part of volume
+
+- alias: kitchen - Volume
+  trigger:
+    platform: state
+    entity_id: media_player.kitchen
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.kitchen
+        value: '{{ states.media_player.kitchen.attributes.volume_level }}'
+
+- alias: living room - Volume
+  trigger:
+    platform: state
+    entity_id: media_player.living_room
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.living_room
+        value: '{{ states.media_player.living_room.attributes.volume_level }}'

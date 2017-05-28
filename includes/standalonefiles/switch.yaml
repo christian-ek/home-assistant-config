@@ -1,0 +1,107 @@
+- platform: template
+  switches:
+    sonos_kitchen_group:
+      friendly_name: 'Sonos Kitchen Group'
+      value_template: "{{ is_state('media_player.kitchen', 'playing') }}"
+      turn_on:
+        service: shell_command.sonos_join_kitchen
+      turn_off:
+        service: shell_command.sonos_unjoin_kitchen
+        
+    sonos_living_room_group:
+      friendly_name: 'Sonos Living Room Group'
+      value_template: "{{ is_state('media_player.living_room', 'playing') }}"
+      turn_on:
+        service: shell_command.sonos_join_living_room
+      turn_off:
+        service: shell_command.sonos_unjoin_living_room
+
+    sonos_play:
+      friendly_name: 'Sonos Play Button'
+      value_template: >
+        {% if is_state('media_player.kitchen', 'playing') %}
+          true
+        {% elif is_state('media_player.living_room', 'playing') %}
+          true
+        {% else %}
+          false
+        {% endif %}
+      turn_on:
+        service: shell_command.sonos_control_resume
+      turn_off:
+        service: shell_command.sonos_control_pause
+        
+    sonos_shuffle:
+      friendly_name: 'Sonos Shuffle Button'
+      value_template: >
+        {% if is_state('sensor.sonos_living_room_shuffle_status', 'true') and is_state('media_player.living_room', 'playing') %}
+          true
+        {% elif is_state('sensor.sonos_kitchen_shuffle_status', 'true') and is_state('media_player.kitchen', 'playing') %}
+          true
+        {% else %}
+          false
+        {% endif %}
+      turn_on:
+        service_template: >
+          {% if is_state('media_player.living_room', 'playing') %}
+            shell_command.sonos_control_living_room_shuffle_on
+          {% else %}
+            shell_command.sonos_control_kitchen_shuffle_on
+          {% endif %}
+      turn_off:
+        service_template: >
+          {% if is_state('media_player.living_room', 'playing') %}
+            shell_command.sonos_control_living_room_shuffle_off
+          {% else %}
+            shell_command.sonos_control_kitchen_shuffle_off
+          {% endif %}
+          
+    sonos_repeat:
+      friendly_name: 'Sonos Repeat Button'
+      value_template: >
+        {% if is_state('sensor.sonos_living_room_repeat_status', 'all') and is_state('media_player.living_room', 'playing') %}
+          true
+        {% elif is_state('sensor.sonos_kitchen_repeat_status', 'all') and is_state('media_player.kitchen', 'playing') %}
+          true
+        {% else %}
+          false
+        {% endif %}
+      turn_on:
+        service_template: >
+          {% if is_state('media_player.living_room', 'playing') %}
+            shell_command.sonos_control_living_room_repeat_on
+          {% else %}
+            shell_command.sonos_control_kitchen_repeat_on
+          {% endif %}
+      turn_off:
+        service_template: >
+          {% if is_state('media_player.living_room', 'playing') %}
+            shell_command.sonos_control_living_room_repeat_off
+          {% else %}
+            shell_command.sonos_control_kitchen_repeat_off
+          {% endif %}
+          
+    sonos_crossfade:
+      friendly_name: 'Sonos Crossfade Button'
+      value_template: >
+        {% if is_state('sensor.sonos_living_room_crossfade_status', 'true') and is_state('media_player.living_room', 'playing') %}
+          true
+        {% elif is_state('sensor.sonos_kitchen_crossfade_status', 'true') and is_state('media_player.kitchen', 'playing') %}
+          true
+        {% else %}
+          false
+        {% endif %}
+      turn_on:
+        service_template: >
+          {% if is_state('media_player.living_room', 'playing') %}
+            shell_command.sonos_control_living_room_crossfade_on
+          {% else %}
+            shell_command.sonos_control_kitchen_crossfade_on
+          {% endif %}
+      turn_off:
+        service_template: >
+          {% if is_state('media_player.living_room', 'playing') %}
+            shell_command.sonos_control_living_room_crossfade_off
+          {% else %}
+            shell_command.sonos_control_kitchen_crossfade_off
+          {% endif %}

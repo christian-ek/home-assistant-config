@@ -1,0 +1,48 @@
+###########################################
+#    Hide Sensors
+###########################################
+
+sensor.*_energy_*:
+  hidden: true
+sensor.*_previous_reading*:
+  hidden: true
+sensor.*_power*:
+  hidden: true
+sensor.*_temperature_*:
+  hidden: true
+sensor.*_exporting_*:
+  hidden: true
+sensor.*_interval_*:
+  hidden: true
+
+###########################################
+#    Hide Switches
+###########################################
+
+switch.decklight_switch_2_0:
+  hidden: true
+switch.main_entrance_lighting_switch_3_0:
+  hidden: true
+
+
+###########################################
+#    Hide Device trackers
+###########################################
+
+device_tracker.*:
+  hidden: true
+
+###########################################
+#    Hide Sonos
+###########################################
+
+sensor.sonos_*:
+  hidden: true
+
+###########################################
+#    Hide Scripts
+###########################################
+
+script.play_*:
+  hidden: true
+

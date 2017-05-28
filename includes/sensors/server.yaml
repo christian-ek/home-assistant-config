@@ -1,0 +1,31 @@
+###########################################
+#    Server Status
+###########################################
+
+- platform: command_line
+  name: server_uptime
+  command: "sed -n 's/uptime: //p' /home/homeassistant/server_status.log"
+      
+- platform: command_line
+  name: server_disk_free
+  command: "sed -n 's/disk_free: //p' /home/homeassistant/server_status.log"
+  unit_of_measurement: "GB"
+
+- platform: command_line
+  name: server_cpu_temp
+  command: "sed -n 's/cpu_temp: //p' /home/homeassistant/server_status.log"
+  unit_of_measurement: "°C"
+
+- platform: command_line
+  name: server_hdd_temp
+  command: "sed -n 's/hdd_temp: //p' /home/homeassistant/server_status.log"
+  unit_of_measurement: "°C"
+
+- platform: command_line
+  name: server_memusage
+  command: "sed -n 's/mem: //p' /home/homeassistant/server_status.log"
+  unit_of_measurement: "%"
+
+- platform: command_line
+  name: server_cpuload
+  command: "sed -n 's/cpu: //p' /home/homeassistant/server_status.log"

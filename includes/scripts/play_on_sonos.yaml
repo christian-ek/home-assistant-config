@@ -1,0 +1,119 @@
+play_all_out_90s:
+  alias: Play All out 90s
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_all_out_90s
+    
+play_bandit_rock:
+  alias: Play Bandit Rock
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_bandit_rock_1048
+
+play_barnens:
+  alias: Play Barnens
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_barnens
+
+play_hits_idag:
+  alias: Play Hits idag
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_hits_idag
+
+play_klassisk_rock:
+  alias: Play Klassisk Rock
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_klassisk_rock
+
+play_lite_fm:
+  alias: Play Lite FM
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_lite_fm_1011
+    
+play_lugna_favoriter_666:
+  alias: Play Lugna Favoriter 66.6
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_lugna_favoriter_666
+
+play_lugna_favoriter_1047:
+  alias: Play Lugna Favoriter 104.7
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_lugna_favoriter_1047
+    
+play_pearl_jam:
+  alias: Play Pearl Jam
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_pearl_jam
+
+play_radioapans_knattekanal:
+  alias: Play Radioapans Knattekanal
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_radioapans_knattekanal
+
+play_radioseven:
+  alias: Play Radioseven
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_radioseven
+
+play_raubtier:
+  alias: Play Raubtier
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_raubtier
+
+play_rmf_rock:
+  alias: Play RMF Rock
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_rmf_rock
+
+play_rmf_classic_rock:
+  alias: Play RMF Classic Rock
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_rmf_classic_rock
+
+play_rockklassiker_1078:
+  alias: Play Rockklassiker 107.8
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_rockklassiker_1078
+    
+play_sarahs:
+  alias: Play Sarahs
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_sarah
+
+play_sommarhits_2017:
+  alias: Play Sommarhits 2017
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_sommarhits_2017
+    
+play_top10:
+  alias: Play Top 10
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_top10
+    
+play_tropical_house:
+  alias: Play Tropical House
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_tropical_house
+
+play_weekly_buzz:
+  alias: Play Weekly Buzz
+  sequence:
+    - service: shell_command.sonos_volume_20
+    - service: shell_command.sonos_favorite_weekly_buzz
