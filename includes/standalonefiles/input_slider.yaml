@@ -3,10 +3,11 @@ sonos_living_room_volume:
   initial: 20
   min: 0
   max: 100
-  step: 1
+  step: 5
+
 sonos_kitchen_volume:
   name: Kitchen
   initial: 20
   min: 0
   max: 100
-  step: 1
+  step: 5

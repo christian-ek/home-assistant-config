@@ -6,7 +6,7 @@
     - service: shell_command.sonos_volume
       data_template:
         speaker: 'kitchen'
-        volume: '{{ trigger.to_state.state }}'
+        volume: '{{ trigger.to_state.state | int }}'
 
 - alias: Sonos Volume - Living room
   trigger:
@@ -16,7 +16,7 @@
     - service: shell_command.sonos_volume
       data_template:
         speaker: 'living%20room'
-        volume: '{{ trigger.to_state.state }}'
+        volume: '{{ trigger.to_state.state | int }}'
 
 # set input_slider when volume changes elsewhere
 - alias: Sonos Volume - Set kitchen slider
@@ -27,7 +27,7 @@
     - service: input_slider.select_value
       data_template:
         entity_id: input_slider.sonos_kitchen_volume
-        value: '{{ states.media_player.kitchen.attributes.volume_level * 100 }}'
+        value: '{{ states.media_player.kitchen.attributes.volume_level * 100 | int }}'
 
 - alias: Sonos Volume - Set living room slider
   trigger:
@@ -37,4 +37,4 @@
     - service: input_slider.select_value
       data_template:
         entity_id: input_slider.sonos_living_room_volume
-        value: '{{ states.media_player.living_room.attributes.volume_level * 100 }}'
+        value: '{{ states.media_player.living_room.attributes.volume_level * 100 | int }}'
