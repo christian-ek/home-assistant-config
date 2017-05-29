@@ -5,7 +5,7 @@ sonos_volume_20: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/volum
 sonos_volume_low: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/volume/30'
 sonos_volume_high: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/volume/50'
 
-sonos_volume_custom: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/volume/'
+sonos_volume: '/usr/bin/curl -X GET http://10.0.0.90:5005/{{speaker}}/volume/{{volume}}'
 
 # SONOS: JOIN/UNJOIN
 sonos_join_kitchen: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/join/living%20room'

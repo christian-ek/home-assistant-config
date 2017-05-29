@@ -1,41 +1,40 @@
-- alias: living_room - Adjust Volume
+- alias: Sonos Volume - Kitchen
   trigger:
-    platform: state
-    entity_id: input_slider.living_room
+    - platform: state
+      entity_id: input_slider.sonos_kitchen_volume
   action:
-    - service: media_player.volume_set
+    - service: shell_command.sonos_volume
       data_template:
-        entity_id: media_player.living_room
-        volume_level: '{{ trigger.to_state.state }}'
+        speaker: 'kitchen'
+        volume: '{{ trigger.to_state.state }}'
 
-- alias: kitchen - Adjust Volume
+- alias: Sonos Volume - Living room
   trigger:
-    platform: state
-    entity_id: input_slider.kitchen
+    - platform: state
+      entity_id: input_slider.sonos_living_room_volume
   action:
-    - service: media_player.volume_set
+    - service: shell_command.sonos_volume
       data_template:
-        entity_id: media_player.kitchen
-        volume_level: '{{ trigger.to_state.state }}'
+        speaker: 'living%20room'
+        volume: '{{ trigger.to_state.state }}'
 
-# second part of volume
-
-- alias: kitchen - Volume
+# set input_slider when volume changes elsewhere
+- alias: Sonos Volume - Set kitchen slider
   trigger:
-    platform: state
-    entity_id: media_player.kitchen
+    - platform: state
+      entity_id: media_player.kitchen
   action:
     - service: input_slider.select_value
       data_template:
-        entity_id: input_slider.kitchen
-        value: '{{ states.media_player.kitchen.attributes.volume_level }}'
+        entity_id: input_slider.sonos_kitchen_volume
+        value: '{{ states.media_player.kitchen.attributes.volume_level * 100 }}'
 
-- alias: living room - Volume
+- alias: Sonos Volume - Set living room slider
   trigger:
     platform: state
     entity_id: media_player.living_room
   action:
     - service: input_slider.select_value
       data_template:
-        entity_id: input_slider.living_room
-        value: '{{ states.media_player.living_room.attributes.volume_level }}'
+        entity_id: input_slider.sonos_living_room_volume
+        value: '{{ states.media_player.living_room.attributes.volume_level * 100 }}'
