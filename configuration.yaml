@@ -67,10 +67,6 @@ mqtt:
   client_id: home-assistant
   port: 1883
 
-tts:
-  platform: google
-  language: 'sv'
-
 http:
   api_password: !secret http_password
   base_url: !secret http_base_url
