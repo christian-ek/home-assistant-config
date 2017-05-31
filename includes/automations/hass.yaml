@@ -14,8 +14,14 @@
     platform: state
     entity_id: updater.updater
   action:
-    service: notify.pushbullet
-    data_template:
-      title: "Home Assistant"
-      message: "HomeAssistant {{ states('updater.updater') }} is now available"
-      target: !secret pushbullet_channel
+    - service: notify.pushbullet
+      data_template:
+        title: "Home Assistant"
+        message: "HomeAssistant {{ states('updater.updater') }} is now available!"
+        target: !secret pushbullet_channel
+    - service: notify.iOS
+      data_template:
+        message: "HomeAssistant {{ states('updater.updater') }} is now available!"
+        data:
+          push:
+            badge: 5

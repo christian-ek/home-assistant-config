@@ -10,6 +10,7 @@ homeassistant:
 
 frontend:
 updater:
+ios:
 #discovery:
 conversation:
 history:
@@ -85,9 +86,14 @@ verisure:
   password: !secret verisure_password
 
 notify:
-  name: pushbullet
-  platform: pushbullet
-  api_key: !secret pushbullet_key
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet_key
+  - name: iOS
+    platform: group
+    services:
+      - service: ios_iphone_sarah
+      - service: ios_ipad_christian
 
 media_player:
   - platform: cast

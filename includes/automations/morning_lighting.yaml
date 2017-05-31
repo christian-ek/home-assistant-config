@@ -32,6 +32,12 @@
         title: "Home Assistant"
         message: "God morgon, stänger av utomhusbelysningen."
         target: !secret pushbullet_channel
+    - service: notify.iOS
+      data:
+        message: "God morgon, stänger av utomhusbelysningen."
+        data:
+          push:
+            badge: 5
     - condition: state
       entity_id: alarm_control_panel.alarm_1
       state: disarmed

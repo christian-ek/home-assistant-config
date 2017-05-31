@@ -15,3 +15,10 @@
           shell_command.sonos_play_doorbell_night
         {% endif %}
     - service: shell_command.doorbell_notification
+    - service: notify.iOS
+      data:
+        message: "Dörrklockan ringer!"
+        data:
+          push:
+            category: camera
+          entity_id: camera.huvudentren
