@@ -2,6 +2,7 @@
 .HA_VERSION
 .google.token
 .uuid
+.gitattributes
 OZW_Log.txt
 deps/
 home-assistant.log
