@@ -1,0 +1,5 @@
+- platform: cast
+- platform: sonos
+  hosts:
+    - 10.0.0.26
+    - 10.0.0.27

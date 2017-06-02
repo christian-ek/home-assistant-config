@@ -1,0 +1,3 @@
+broker: 10.0.0.90
+client_id: home-assistant
+port: 1883

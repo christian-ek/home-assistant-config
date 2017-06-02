@@ -1,0 +1,4 @@
+docker:
+  title: 'Docker Dashboard'
+  url: !secret docker_iframe_url
+  icon: mdi:server-network

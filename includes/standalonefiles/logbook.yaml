@@ -1,0 +1,11 @@
+exclude:
+  entities:
+    - automation.owntracks_refresh
+    - sensor.server_uptime
+    - sensor.server_cpuload
+    - sensor.pi_uptime
+    - sensor.pi_cpuload
+    - sensor.unifi_router_uptime
+    - sensor.unifi_router_cpuload
+    - sensor.unifi_switch_uptime
+    - sensor.unifi_switch_cpuload

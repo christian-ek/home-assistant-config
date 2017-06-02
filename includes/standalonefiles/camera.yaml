@@ -1,0 +1,4 @@
+- platform: uvc
+  nvr: 10.0.0.90
+  key: !secret unifi_video_key
+  password: !secret unifi_password

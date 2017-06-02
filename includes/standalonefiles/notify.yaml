@@ -1,0 +1,8 @@
+- name: pushbullet
+  platform: pushbullet
+  api_key: !secret pushbullet_key
+- name: iOS
+  platform: group
+  services:
+    - service: ios_ipad_christian
+    - service: ios_iphone_sarah

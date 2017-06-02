@@ -1,0 +1,5 @@
+- platform: unifi
+  host: 10.0.0.7
+  username: !secret unifi_username
+  verify_ssl: false
+  password: !secret unifi_password

@@ -8,6 +8,18 @@ homeassistant:
   customize: !include_dir_merge_named includes/customize
   customize_glob: !include_dir_merge_named includes/customize_glob
 
+http:
+  api_password: !secret http_password
+  base_url: !secret http_base_url
+
+verisure:
+  username: !secret verisure_email
+  password: !secret verisure_password
+
+recorder:
+  db_url: !secret db_url
+  purge_days: 60
+
 frontend:
 updater:
 ios:
@@ -16,11 +28,6 @@ conversation:
 history:
 sun:
 config:
-logger:
-  default: warning
-  logs:
-    requests.packages.urllib3.connectionpool: critical
-    py.warnings: critical
 
 sensor: !include_dir_merge_list includes/sensors
 automation: !include_dir_merge_list includes/automations
@@ -32,72 +39,14 @@ input_slider: !include includes/standalonefiles/input_slider.yaml
 input_select: !include_dir_merge_named includes/input_select
 shell_command: !include_dir_merge_named includes/shell_commands
 
-device_tracker:
-  - platform: unifi
-    host: 10.0.0.7
-    username: !secret unifi_username
-    verify_ssl: false
-    password: !secret unifi_password
+#  Plain import | enabled
+logger: !include includes/standalonefiles/logger.yaml
+device_tracker: !include includes/standalonefiles/device_tracker.yaml
+panel_iframe: !include includes/standalonefiles/panel_iframe.yaml
+mqtt: !include includes/standalonefiles/mqtt.yaml
+zwave: !include includes/standalonefiles/zwave.yaml
+camera: !include includes/standalonefiles/camera.yaml
+notify: !include includes/standalonefiles/notify.yaml
+media_player: !include includes/standalonefiles/media_player.yaml
+logbook: !include includes/standalonefiles/logbook.yaml
 
-panel_iframe:
-  docker:
-    title: 'Docker Dashboard'
-    url: !secret docker_iframe_url
-    icon: mdi:server-network
-
-recorder:
-  db_url: !secret db_url
-  purge_days: 60
-
-logbook:
-  exclude:
-    entities:
-      - automation.owntracks_refresh
-      - sensor.server_uptime
-      - sensor.server_cpuload
-      - sensor.pi_uptime
-      - sensor.pi_cpuload
-      - sensor.unifi_router_uptime
-      - sensor.unifi_router_cpuload
-      - sensor.unifi_switch_uptime
-      - sensor.unifi_switch_cpuload
-
-mqtt:
-  broker: 10.0.0.90
-  client_id: home-assistant
-  port: 1883
-
-http:
-  api_password: !secret http_password
-  base_url: !secret http_base_url
-
-zwave:
-  usb_path: /dev/ttyACM0
-  config_path: /srv/homeassistant/homeassistant_venv/lib/python3.4/site-packages/libopenzwave-0.3.1-py3.4-linux-armv7l.egg/config
-
-camera:
-  - platform: uvc
-    nvr: 10.0.0.90
-    key: !secret unifi_video_key
-    password: !secret unifi_password
-
-verisure:
-  username: !secret verisure_email
-  password: !secret verisure_password
-
-notify:
-  - name: pushbullet
-    platform: pushbullet
-    api_key: !secret pushbullet_key
-  - name: iOS
-    platform: group
-    services:
-      - service: ios_iphone_sarah
-      - service: ios_ipad_christian
-
-media_player:
-  - platform: cast
-  - platform: sonos
-    hosts:
-       - 10.0.0.26
-       - 10.0.0.27
