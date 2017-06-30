@@ -6,6 +6,8 @@ sonos_control_next:
         shell_command.sonos_control_living_room_next
       {% elif is_state('media_player.kitchen', 'playing')  %}
         shell_command.sonos_control_kitchen_next
+      {% elif is_state('media_player.outdoors', 'playing')  %}
+        shell_command.sonos_control_outdoors_next
       {% endif %}
 
 sonos_control_previous:
@@ -16,4 +18,6 @@ sonos_control_previous:
         shell_command.sonos_control_living_room_previous
       {% elif is_state('media_player.kitchen', 'playing')  %}
         shell_command.sonos_control_kitchen_previous
+      {% elif is_state('media_player.outdoors', 'playing')  %}
+        shell_command.sonos_control_outdoors_previous
       {% endif %}

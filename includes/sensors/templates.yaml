@@ -55,6 +55,8 @@
                 {{states.media_player.living_room.attributes.media_title}}<br />{{states.media_player.living_room.attributes.media_artist}}
             {% elif is_state("media_player.kitchen", "playing") %}
                 {{states.media_player.kitchen.attributes.media_title}}<br />{{states.media_player.kitchen.attributes.media_artist}}
+            {% elif is_state("media_player.outdoors", "playing") %}
+                {{states.media_player.outdoors.attributes.media_title}}<br />{{states.media_player.outdoors.attributes.media_artist}}
             {% else %}
                 Not playing
             {%- endif %}
@@ -66,6 +68,8 @@
                 {{states.sensor.sonos_living_room_next_song.state}}
             {% elif is_state("media_player.kitchen", "playing") and states.sensor.sonos_kitchen_next_song != "<br />"%}
                 {{states.sensor.sonos_kitchen_next_song.state}}
+            {% elif is_state("media_player.outdoors", "playing") and states.sensor.sonos_outdoors_next_song != "<br />"%}
+                {{states.sensor.sonos_outdoors_next_song.state}}
             {% else %}
                 Not playing
             {%- endif %}

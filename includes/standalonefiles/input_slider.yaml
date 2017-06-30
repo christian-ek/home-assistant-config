@@ -11,3 +11,10 @@ sonos_kitchen_volume:
   min: 0
   max: 100
   step: 5
+
+sonos_outdoors_volume:
+  name: Outdoors
+  initial: 20
+  min: 0
+  max: 100
+  step: 5

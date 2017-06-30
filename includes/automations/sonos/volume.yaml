@@ -8,6 +8,16 @@
         speaker: 'kitchen'
         volume: '{{ trigger.to_state.state | int }}'
 
+- alias: Sonos Volume - Outdoors
+  trigger:
+    - platform: state
+      entity_id: input_slider.sonos_outdoors_volume
+  action:
+    - service: shell_command.sonos_volume
+      data_template:
+        speaker: 'outdoors'
+        volume: '{{ trigger.to_state.state | int }}'
+
 - alias: Sonos Volume - Living room
   trigger:
     - platform: state
@@ -28,6 +38,16 @@
       data_template:
         entity_id: input_slider.sonos_kitchen_volume
         value: '{{ states.media_player.kitchen.attributes.volume_level * 100 | int }}'
+
+- alias: Sonos Volume - Set outdoors slider
+  trigger:
+    - platform: state
+      entity_id: media_player.outdoors
+  action:
+    - service: input_slider.select_value
+      data_template:
+        entity_id: input_slider.sonos_outdoors_volume
+        value: '{{ states.media_player.outdoors.attributes.volume_level * 100 | int }}'
 
 - alias: Sonos Volume - Set living room slider
   trigger:

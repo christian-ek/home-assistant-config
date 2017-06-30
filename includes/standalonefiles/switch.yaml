@@ -15,6 +15,14 @@
         service: shell_command.sonos_join_living_room
       turn_off:
         service: shell_command.sonos_unjoin_living_room
+    
+    sonos_outdoors_group:
+      friendly_name: 'Sonos Outdoors Group'
+      value_template: "{{ is_state('media_player.outdoors', 'playing') }}"
+      turn_on:
+        service: shell_command.sonos_join_outdoors
+      turn_off:
+        service: shell_command.sonos_unjoin_outdoors
 
     sonos_play:
       friendly_name: 'Sonos Play Button'
@@ -22,6 +30,8 @@
         {% if is_state('media_player.kitchen', 'playing') %}
           true
         {% elif is_state('media_player.living_room', 'playing') %}
+          true
+        {% elif is_state('media_player.outdoors', 'playing') %}
           true
         {% else %}
           false
@@ -38,6 +48,8 @@
           true
         {% elif is_state('sensor.sonos_kitchen_shuffle_status', 'true') and is_state('media_player.kitchen', 'playing') %}
           true
+        {% elif is_state('sensor.sonos_outdoors_shuffle_status', 'true') and is_state('media_player.outdoors', 'playing') %}
+          true
         {% else %}
           false
         {% endif %}
@@ -45,15 +57,19 @@
         service_template: >
           {% if is_state('media_player.living_room', 'playing') %}
             shell_command.sonos_control_living_room_shuffle_on
-          {% else %}
+          {% elif is_state('media_player.kitchen', 'playing') %}
             shell_command.sonos_control_kitchen_shuffle_on
+          {% else %}
+            shell_command.sonos_control_outdoors_shuffle_on
           {% endif %}
       turn_off:
         service_template: >
           {% if is_state('media_player.living_room', 'playing') %}
             shell_command.sonos_control_living_room_shuffle_off
-          {% else %}
+          {% elif is_state('media_player.kitchen', 'playing') %}
             shell_command.sonos_control_kitchen_shuffle_off
+          {% else %}
+            shell_command.sonos_control_outdoors_shuffle_off
           {% endif %}
           
     sonos_repeat:
@@ -63,6 +79,8 @@
           true
         {% elif is_state('sensor.sonos_kitchen_repeat_status', 'all') and is_state('media_player.kitchen', 'playing') %}
           true
+        {% elif is_state('sensor.sonos_outdoors_repeat_status', 'all') and is_state('media_player.outdoors', 'playing') %}
+          true
         {% else %}
           false
         {% endif %}
@@ -70,15 +88,19 @@
         service_template: >
           {% if is_state('media_player.living_room', 'playing') %}
             shell_command.sonos_control_living_room_repeat_on
-          {% else %}
+          {% elif is_state('media_player.kitchen', 'playing') %}
             shell_command.sonos_control_kitchen_repeat_on
+          {% else %}
+            shell_command.sonos_control_outdoors_repeat_on
           {% endif %}
       turn_off:
         service_template: >
           {% if is_state('media_player.living_room', 'playing') %}
             shell_command.sonos_control_living_room_repeat_off
-          {% else %}
+          {% elif is_state('media_player.kitchen', 'playing') %}
             shell_command.sonos_control_kitchen_repeat_off
+          {% else %}
+            shell_command.sonos_control_outdoors_repeat_off
           {% endif %}
           
     sonos_crossfade:
@@ -88,6 +110,8 @@
           true
         {% elif is_state('sensor.sonos_kitchen_crossfade_status', 'true') and is_state('media_player.kitchen', 'playing') %}
           true
+        {% elif is_state('sensor.sonos_outdoors_crossfade_status', 'true') and is_state('media_player.outdoors', 'playing') %}
+          true
         {% else %}
           false
         {% endif %}
@@ -95,13 +119,17 @@
         service_template: >
           {% if is_state('media_player.living_room', 'playing') %}
             shell_command.sonos_control_living_room_crossfade_on
-          {% else %}
+          {% elif is_state('media_player.kitchen', 'playing') %}
             shell_command.sonos_control_kitchen_crossfade_on
+          {% else %}
+            shell_command.sonos_control_outdoors_crossfade_on
           {% endif %}
       turn_off:
         service_template: >
           {% if is_state('media_player.living_room', 'playing') %}
             shell_command.sonos_control_living_room_crossfade_off
-          {% else %}
+          {% elif is_state('media_player.kitchen', 'playing') %}
             shell_command.sonos_control_kitchen_crossfade_off
+          {% else %}
+            shell_command.sonos_control_outdoors_crossfade_off
           {% endif %}

@@ -3,28 +3,43 @@
 ###########################################
 
 - platform: command_line
+  name: sonos_living_room_shuffle_status
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/state | grep -o -P '(?<=\"shuffle\":).*(?=,)'
+
+- platform: command_line
   name: sonos_kitchen_shuffle_status
   command: /usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/state | grep -o -P '(?<=\"shuffle\":).*(?=,)'
 
 - platform: command_line
-  name: sonos_living_room_shuffle_status
-  command: /usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/state | grep -o -P '(?<=\"shuffle\":).*(?=,)'
-  
+  name: sonos_outdoors_shuffle_status
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/state | grep -o -P '(?<=\"shuffle\":).*(?=,)'
+
+
+- platform: command_line
+  name: sonos_living_room_repeat_status
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/state | grep -o -P '(?<=\"repeat\":\").*(?=",)'
+
 - platform: command_line
   name: sonos_kitchen_repeat_status
   command: /usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/state | grep -o -P '(?<=\"repeat\":\").*(?=",)'
 
 - platform: command_line
-  name: sonos_living_room_repeat_status
-  command: /usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/state | grep -o -P '(?<=\"repeat\":\").*(?=",)'
+  name: sonos_outdoors_repeat_status
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/state | grep -o -P '(?<=\"repeat\":\").*(?=",)'
+
+
+- platform: command_line
+  name: sonos_living_room_crossfade_status
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/state | grep -o -P '(?<="crossfade":).*(?=})' | sed s'/.$//'
   
 - platform: command_line
   name: sonos_kitchen_crossfade_status
   command: /usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/state | grep -o -P '(?<="crossfade":).*(?=})' | sed s'/.$//'
-  
+
 - platform: command_line
-  name: sonos_living_room_crossfade_status
-  command: /usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/state | grep -o -P '(?<="crossfade":).*(?=})' | sed s'/.$//'
+  name: sonos_outdoors_crossfade_status
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/state | grep -o -P '(?<="crossfade":).*(?=})' | sed s'/.$//'
+  
   
 - platform: command_line
   name: sonos_living_room_next_song
@@ -33,4 +48,8 @@
 - platform: command_line
   name: sonos_kitchen_next_song
   command: /usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/state | egrep -o '\"nextTrack\".*' | awk -F\" '{print $10"<br />"$6}'
+
+- platform: command_line
+  name: sonos_outdoors_next_song
+  command: /usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/state | egrep -o '\"nextTrack\".*' | awk -F\" '{print $10"<br />"$6}'
 

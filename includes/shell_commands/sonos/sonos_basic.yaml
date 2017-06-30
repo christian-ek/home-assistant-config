@@ -9,8 +9,10 @@ sonos_volume: '/usr/bin/curl -X GET http://10.0.0.90:5005/{{speaker}}/volume/{{v
 
 # SONOS: JOIN/UNJOIN
 sonos_join_kitchen: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/join/living%20room'
+sonos_join_outdoors: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/join/living%20room'
 sonos_join_living_room: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/join/kitchen'
 sonos_unjoin_kitchen: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/leave'
+sonos_unjoin_outdoors: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/leave'
 sonos_unjoin_living_room: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/leave'
 
 # SONOS: BASIC COMMANDS COMMAND
@@ -18,26 +20,34 @@ sonos_control_pause: '/usr/bin/curl -X GET http://10.0.0.90:5005/pauseall'
 sonos_control_resume: '/usr/bin/curl -X GET http://10.0.0.90:5005/resumeall'
 sonos_control_kitchen_next: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/next'
 sonos_control_kitchen_previous: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/previous'
+sonos_control_outdoors_next: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/next'
+sonos_control_outdoors_previous: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/previous'
 sonos_control_living_room_next: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/next'
 sonos_control_living_room_previous: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/previous'
 
 # SONOS: SHUFFLE
-sonos_control_living_room_shuffle_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/shuffle/on'
-sonos_control_living_room_shuffle_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/shuffle/off'
 sonos_control_kitchen_shuffle_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/shuffle/on'
 sonos_control_kitchen_shuffle_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/shuffle/off'
+sonos_control_outdoors_shuffle_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/shuffle/on'
+sonos_control_outdoors_shuffle_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/shuffle/off'
+sonos_control_living_room_shuffle_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/shuffle/on'
+sonos_control_living_room_shuffle_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/shuffle/off'
 
 # SONOS: CROSSFADE
-sonos_control_living_room_crossfade_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/crossfade/on'
-sonos_control_living_room_crossfade_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/crossfade/off'
 sonos_control_kitchen_crossfade_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/crossfade/on'
 sonos_control_kitchen_crossfade_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/crossfade/off'
+sonos_control_outdoors_crossfade_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/crossfade/on'
+sonos_control_outdoors_crossfade_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/crossfade/off'
+sonos_control_living_room_crossfade_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/crossfade/on'
+sonos_control_living_room_crossfade_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/crossfade/off'
 
 # SONOS: REPEAT
-sonos_control_living_room_repeat_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/repeat/on'
-sonos_control_living_room_repeat_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/repeat/off'
 sonos_control_kitchen_repeat_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/repeat/on'
 sonos_control_kitchen_repeat_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/repeat/off'
+sonos_control_outdoors_repeat_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/repeat/on'
+sonos_control_outdoors_repeat_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/outdoors/repeat/off'
+sonos_control_living_room_repeat_on: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/repeat/on'
+sonos_control_living_room_repeat_off: '/usr/bin/curl -X GET http://10.0.0.90:5005/living%20room/repeat/off'
 
 # SONOS: SAY AND CLIP
 sonos_play_doorbell: '/usr/bin/curl -X GET http://10.0.0.90:5005/kitchen/clip/doorbell.mp3/70'
