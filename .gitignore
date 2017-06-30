@@ -15,6 +15,7 @@ zwave_device_config.yaml
 zwcfg_0xc507a625.xml
 zwscene.xml
 ios.conf
+.ios.conf
 
 #Passwords
 secrets.yaml
