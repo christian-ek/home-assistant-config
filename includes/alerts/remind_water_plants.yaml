@@ -1,0 +1,12 @@
+#################################################################
+## Reminder to water plants
+#################################################################
+
+reminder_water_plants:
+  name: "Warning: The moisture level on Elefantöra is low"
+  entity_id: binary_sensor.elefantora_moisture_low
+  repeat: 120
+  can_acknowledge: true
+  skip_first: false
+  notifiers:
+    - all_devices

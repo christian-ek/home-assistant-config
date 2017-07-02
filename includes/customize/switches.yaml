@@ -2,21 +2,21 @@
 #    Customized Switches
 ###########################################
 
-switch.decklight_switch_2_0_2:
+switch.decklight_switch_2:
   friendly_name: Decklight
   icon: mdi:lightbulb
-switch.decklight_switch_2_0_3:
+switch.decklight_switch_3:
   friendly_name: Decklight Stairs
   icon: mdi:lightbulb
-switch.main_entrance_lighting_switch_3_0_2:
+switch.main_entrance_lighting_switch_2:
   friendly_name: Hallway Entrance
   icon: mdi:lightbulb
-switch.main_entrance_lighting_switch_3_0_3:
+switch.main_entrance_lighting_switch_3:
   friendly_name: Frontyard
   icon: mdi:lightbulb
-switch.hallway_lighting_switch_4_0:
+switch.hallway_lighting_switch:
   friendly_name: Hallway
   icon: mdi:lightbulb
-switch.hallway_lighting_switch_4_0_2:
+switch.hallway_lighting_switch_2:
   friendly_name: Backyard
   icon: mdi:lightbulb

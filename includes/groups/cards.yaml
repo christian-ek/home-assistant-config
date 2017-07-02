@@ -96,20 +96,20 @@ unifi_switch_status:
 backyard_lights:
   name: Baksidan
   entities:
-    - switch.hallway_lighting_switch_4_0_2
-    - switch.decklight_switch_2_0_2
-    - switch.decklight_switch_2_0_3
+    - switch.hallway_lighting_switch_2
+    - switch.decklight_switch_2
+    - switch.decklight_switch_3
 
 frontyard_lights:
   name: Framsidan
   entities:
-    - switch.main_entrance_lighting_switch_3_0_3
+    - switch.main_entrance_lighting_switch_3
 
 hallway_lights:
   name: Hallen
   entities:
-    - switch.main_entrance_lighting_switch_3_0_2
-    - switch.hallway_lighting_switch_4_0
+    - switch.main_entrance_lighting_switch_2
+    - switch.hallway_lighting_switch
 
 mysonos:
   name: Min Sonos

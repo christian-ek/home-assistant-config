@@ -1,0 +1,6 @@
+- platform: template
+  sensors:
+    elefantora_moisture_low:
+      value_template: '{{ states.sensor.flower_1_moisture.state < 30 }}'
+      friendly_name: 'Moisture level Elefantöra is low'
+      device_class: moisture

@@ -6,3 +6,12 @@
   services:
     - service: ios_ipad_christian
     - service: ios_iphone_sarah
+
+- name: all_devices
+  platform: group
+  services:
+    - service: pushbullet
+      data:
+        target: !secret pushbullet_channel
+    - service: ios_ipad_christian
+    - service: ios_iphone_sarah

@@ -30,7 +30,9 @@ sun:
 config:
 
 automation: !include automations.yaml
+alert: !include_dir_merge_named includes/alerts
 sensor: !include_dir_merge_list includes/sensors
+binary_sensor: !include_dir_merge_list includes/binary_sensors
 zone: !include_dir_list includes/zones
 script: !include_dir_merge_named includes/scripts
 switch: !include includes/standalonefiles/switch.yaml
