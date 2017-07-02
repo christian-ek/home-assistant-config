@@ -2,17 +2,19 @@
 #    Hide Sensors
 ###########################################
 
-sensor.*_energy_*:
+sensor.*_energy*:
   hidden: true
 sensor.*_previous_reading*:
   hidden: true
 sensor.*_power*:
   hidden: true
-sensor.*_temperature_*:
+sensor.*_temperature*:
   hidden: true
-sensor.*_exporting_*:
+sensor.*_exporting*:
   hidden: true
-sensor.*_interval_*:
+sensor.*_interval*:
+  hidden: true
+sensor.*_battery_state*:
   hidden: true
 
 ###########################################

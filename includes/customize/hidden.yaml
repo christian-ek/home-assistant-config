@@ -6,7 +6,11 @@ sensor.since_last_boot:
   hidden: true
 sensor.server_status_uptime:
   hidden: true
-
+sensor.dark_sky_icon:
+  hidden: true
+sensor.verisure_status:
+  hidden: true
+  
 ###########################################
 #    Hidden Switches
 ###########################################

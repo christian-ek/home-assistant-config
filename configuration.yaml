@@ -29,8 +29,8 @@ history:
 sun:
 config:
 
+automation: !include automations.yaml
 sensor: !include_dir_merge_list includes/sensors
-automation: !include_dir_merge_list includes/automations
 zone: !include_dir_list includes/zones
 script: !include_dir_merge_named includes/scripts
 switch: !include includes/standalonefiles/switch.yaml
