@@ -1,0 +1,4 @@
+fan_boost_lilla_toaletten:
+  alias: Start fan boost on Lilla Toaletten
+  sequence:
+    - service: shell_command.fan_boost_lilla_toaletten

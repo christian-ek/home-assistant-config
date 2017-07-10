@@ -75,7 +75,7 @@
     - service: shell_command.sonos_say
       data_template:
         say: '{{"Tänder utomhusbelysningen." | urlencode}}'
-        volume: '50'
+        volume: '40'
 
 #################################################################
 ## Turn off lights at 12am
