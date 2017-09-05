@@ -1,1 +1,1 @@
-doorbell_notification: 'perl /home/homeassistant/.homeassistant/includes/perl_code/send_doorbell_image_notification.pl'fan_boost_lilla_toaletten: 'python3 /home/homeassistant/.homeassistant/includes/python_code/start_fan_boost.py lilla'
+doorbell_notification: 'perl /home/homeassistant/.homeassistant/includes/perl_code/send_doorbell_image_notification.pl'fan_boost_lilla_toaletten: 'python3 /home/homeassistant/.homeassistant/includes/python_code/pax_fan_controller.py start lilla'

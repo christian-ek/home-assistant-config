@@ -10,8 +10,8 @@
     payload: 'on'
   condition:
     condition: time
-    after: '19:00:00'
-    before: '07:00:00'
+    after: '07:00:00'
+    before: '19:00:00'
   action:
     - service: shell_command.sonos_play_doorbell
     - service: shell_command.doorbell_notification
@@ -31,8 +31,8 @@
     payload: 'on'
   condition:
     condition: time
-    after: '07:00:00'
-    before: '19:00:00'
+    after: '19:00:00'
+    before: '07:00:00'
   action:
     - service: shell_command.sonos_play_doorbell_night
     - service: shell_command.doorbell_notification
@@ -80,34 +80,34 @@
 #################################################################
 ## Turn off lights at 12am
 #################################################################
-
-- id: evening_lighting_off
-  alias: Evening lighting off
-  trigger:
-    platform: time
-    at: '00:00:00'
-  action:
-    - service: homeassistant.turn_off
-      entity_id:
-        - group.frontyard_lights
-        - group.backyard_lights
+#
+#- id: evening_lighting_off
+#  alias: Evening lighting off
+#  trigger:
+#    platform: time
+#    at: '00:00:00'
+#  action:
+#    - service: homeassistant.turn_off
+#      entity_id:
+#        - group.frontyard_lights
+#        - group.backyard_lights
 
 #################################################################
 ## Turn on lights before sunrise
 #################################################################
-
-- id: morning_lighting_on
-  alias: Morning lighting on
-  trigger:
-    platform: time
-    at: '5:00:00'
-  action:
-    - condition: sun
-      before: sunrise
-    - service: homeassistant.turn_on
-      entity_id:
-        - group.frontyard_lights
-        - group.backyard_lights
+#
+#- id: morning_lighting_on
+#  alias: Morning lighting on
+#  trigger:
+#    platform: time
+#    at: '5:00:00'
+#  action:
+#    - condition: sun
+#      before: sunrise
+#    - service: homeassistant.turn_on
+#      entity_id:
+#        - group.frontyard_lights
+#        - group.backyard_lights
 
 #################################################################
 ## Turn off lights at sunrise
