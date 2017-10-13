@@ -16,6 +16,7 @@ zwcfg_0xc507a625.xml
 zwscene.xml
 ios.conf
 .ios.conf
+options.xml
 
 #Passwords
 secrets.yaml
